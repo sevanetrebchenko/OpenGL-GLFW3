@@ -15,7 +15,7 @@ namespace {
         }
 
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 2);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
@@ -35,6 +35,11 @@ namespace {
             glfwTerminate();
             return nullptr;
         }
+
+        printf("Vendor:          %s\n", glGetString(GL_VENDOR));
+        printf("Renderer:        %s\n", glGetString(GL_RENDERER));
+        printf("Version OpenGL:  %s\n", glGetString(GL_VERSION));
+        printf("Version GLSL:    %s\n", glGetString(GL_SHADING_LANGUAGE_VERSION));
 
         return window;
     }
